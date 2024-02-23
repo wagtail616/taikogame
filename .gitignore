@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Log.txt
+/taikogame.vcxproj
+/Log.txt
+/taikogame.vcxproj.filters
