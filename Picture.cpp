@@ -4,9 +4,10 @@
 void Picture::Load() {
 	//タイトル
 	title = LoadGraph("picture/Title.png");
-	/*
+	
 	//プレイ画面
-	Play_background  = LoadGraph("");//背景
+	Play_Background = LoadGraph("picture/Play_Background.png");//背景
+	/*
 	taiko = LoadGraph("");//画面に置く太鼓
 	lane  = LoadGraph("");//ノーツを流すレーン
 	notes = LoadGraph("");//ドンとカッ
@@ -15,6 +16,6 @@ void Picture::Load() {
 	combo = LoadGraph("");//コンボ数
 	*/
 }
-void Out(int x,int y, int draw) {
+void Picture::Out(int x,int y, int draw) {
 	DrawGraph(x,y,draw,TRUE);
 };

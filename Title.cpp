@@ -1,6 +1,6 @@
 #include "Dxlib.h"
-#include "Title.h"
 #include "Picture.h"
+#include "Title.h"
 
 void TITLE::Set(Picture picture){
 

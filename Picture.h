@@ -7,7 +7,7 @@ public:
 	int title;
 
 	//プレイ画面
-	int back;//背景
+	int Play_Background;//背景
 	int taiko;//画面に置く太鼓
 	int lane;//ノーツを流すレーン
 	int notes;//ドンとカッ
@@ -16,6 +16,6 @@ public:
 	int combo;//コンボ数
 
 	void Load();//実装はPicture.cpp
-	void Out(int x, int y, int draw) {}//実装はpicture.cpp
+	void Out(int x, int y, int draw);//実装はpicture.cpp
 };
 #endif 
