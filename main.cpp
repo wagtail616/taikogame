@@ -9,12 +9,16 @@
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
+	ChangeWindowMode(TRUE);//Windowモードで起動
+	// フルスクリーンモード時の解像度モードをモニターの最大解像度を使用するモードに設定
+	SetFullScreenResolutionMode(DX_FSRESOLUTIONMODE_MAXIMUM);
+	//画面表示がバグる
+	SetGraphMode(SCREEN_WIDTH, SCREEN_HIGHT, 32);
+
 	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
-	画面表示がバグる
-	SetGraphMode(SCREEN_WIDTH,SCREEN_HIGHT,24);
 
 	Picture picture{};
 	picture.Load();//全画像の読み込み
@@ -24,6 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	title.Set(picture);
 	WaitKey();				// キー入力待ち
 	//プレイ中
+	画面もっと充実させたい
 	PLAY play;
 	play.Set(picture);
 
