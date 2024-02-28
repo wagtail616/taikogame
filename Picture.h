@@ -10,8 +10,8 @@ public:
 	int Play_Background;//背景
 	int Taiko;//画面に置く太鼓
 	int Lane;//ノーツを流すレーン
-	int Notes;//ドンとカッ
 	int Judge;//判定枠
+	int Notes;//ドンとカッ
 	int Split;//魂ゲージ
 	int Combo;//コンボ数
 

@@ -28,12 +28,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	title.Set(picture);
 	WaitKey();				// キー入力待ち
 	//プレイ中
-	//画面もっと充実させたい
+	ループ中の処理考える
 	PLAY play;
+	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 	play.Set(picture);
-
-	WaitKey();				// キー入力待ち
-
+	ClearDrawScreen;
+	}	
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 
 	return 0;				// ソフトの終了 

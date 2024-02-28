@@ -8,10 +8,10 @@ void Picture::Load() {
 	//プレイ画面
 	Play_Background = LoadGraph("picture/Play_Background.png");//背景
 	Lane = LoadGraph("picture/Lane.png");//ノーツを流すレーン
+	Judge = LoadGraph("picture/Judge.png");//判定枠
+	Notes = LoadGraph("picture/ドン(大).png");//ドンとカッ
 	/*
 	Taiko = LoadGraph("");//画面に置く太鼓
-	Notes = LoadGraph("");//ドンとカッ
-	Judge = LoadGraph("");//判定枠
 	Split = LoadGraph("");//魂ゲージ
 	Combo = LoadGraph("");//コンボ数
 	*/
