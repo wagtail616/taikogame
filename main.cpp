@@ -28,7 +28,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	title.Set(picture);
 	WaitKey();				// キー入力待ち
 	//プレイ中
-	画面もっと充実させたい
+	//画面もっと充実させたい
 	PLAY play;
 	play.Set(picture);
 

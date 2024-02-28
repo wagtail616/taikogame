@@ -4,5 +4,6 @@
 
 void PLAY::Set(Picture picture) {
 
-	picture.Out(0, 0, picture.Play_Background);//ƒ^ƒCƒgƒ‹‰æ–Ê‚Ì•`‰æ
+	picture.Out(0, 0, picture.Play_Background);//ƒQ[ƒ€”wŒi
+	picture.Out(0, 260, picture.Lane);//ƒŒ[ƒ“
 };
