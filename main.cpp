@@ -7,7 +7,7 @@
 #define SCREEN_WIDTH  1280
 #define SCREEN_HIGHT  720
 
-リンク参考にフレーム固定する
+//リンク参考にフレーム固定する
 https://dxlib.xsrv.jp/cgi/patiobbs/patio.cgi?mode=view&no=4799
 
 // プログラムは WinMain から始まります
