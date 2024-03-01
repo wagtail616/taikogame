@@ -1,4 +1,5 @@
 #include "DxLib.h"
+#include "GameTime.h"
 #include "Picture.h"
 #include "Title.h"
 #include "Play.h"
@@ -8,7 +9,7 @@
 #define SCREEN_HIGHT  720
 
 //リンク参考にフレーム固定する
-https://dxlib.xsrv.jp/cgi/patiobbs/patio.cgi?mode=view&no=4799
+//https://dxlib.xsrv.jp/cgi/patiobbs/patio.cgi?mode=view&no=4799
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -23,6 +24,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
+	GAMETIME Time;
+	Time.Set();
 
 	Picture picture{};
 	picture.Load();//全画像の読み込み
@@ -38,7 +41,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 	play.Set(picture);
 	notes.Set(picture);
-	notes.Move(picture);
+	Time.Loop();
+	notes.Move(picture,Time);
 	ClearDrawScreen;
 	}	
 	DxLib_End();				// ＤＸライブラリ使用の終了処理

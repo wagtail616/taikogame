@@ -1,9 +1,12 @@
 #pragma once
+#include"GameTime.h"
 class Notes{
 private:
 	int number[100]{};//ノーツ番号
-	int x = 1280, y = 260;//ノーツ位置
+	float x = 1280;int y = 260;//ノーツ位置
+	float NoteSpeed = 200.0f;
+
 public:
 	void Set(Picture picture);
-	void Move(Picture picture);
+	void Move(Picture picture,GAMETIME gametime);
 };
