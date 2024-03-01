@@ -24,26 +24,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
+	//時間の初期設定
 	GAMETIME Time;
 	Time.Set();
-
+	//全画像の読み込み
 	Picture picture{};
-	picture.Load();//全画像の読み込み
+	picture.Load();
+	//画面の描画先を裏画面にする
+	SetDrawScreen(DX_SCREEN_BACK);
 
 	//タイトル
 	TITLE title;
 	title.Set(picture);
+	ScreenFlip();
 	WaitKey();				// キー入力待ち
 	//プレイ中
 	//ループ中の処理考える
 	PLAY play;
 	Notes notes;
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
-	play.Set(picture);
-	notes.Set(picture);
-	Time.Loop();
-	notes.Move(picture,Time);
-	ClearDrawScreen;
+		//画面の消去
+		ClearDrawScreen;
+
+		play.Set(picture);
+		notes.Set(picture);
+		Time.Loop();
+		notes.Move(picture,Time);
+		
+		// 裏画面の内容を表画面に反映
+		ScreenFlip();
 	}	
 	DxLib_End();				// ＤＸライブラリ使用の終了処理
 

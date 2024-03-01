@@ -22,7 +22,7 @@ void GAMETIME::Loop()
 	//¡‰ñŽæ“¾‚µ‚½ŽžŠÔ‚ð•Û‘¶
 	Time = NowTime;
 
-	FPS++;
+	FPSCounter++;
 	if (NowTime - FPSCheckTime > 1000000) {
 		FPS = FPSCounter;
 		FPSCounter = 0;
