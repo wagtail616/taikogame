@@ -4,6 +4,7 @@
 #include "Title.h"
 #include "Play.h"
 #include "Notes.h"
+#include "vector"
 
 #define SCREEN_WIDTH  1280
 #define SCREEN_HIGHT  720
@@ -41,16 +42,38 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//プレイ中
 	//ループ中の処理考える
 	PLAY play;
-	Notes notes;
+	Notes note;
+	std::vector<Notes>notes;
+	int Notes_Max = 100;
+	int i;
+	int j;
+	for (i = 0; i <100;i++) {
+		note.Setnumber(i);
+		notes.push_back(note);
+	}
+	i = 0;
+	j = 0;
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 		//画面の消去
 		ClearDrawScreen;
 
 		play.Set(picture);
-		notes.Set(picture);
+		//時間のセット
 		Time.Loop();
-		notes.Move(picture,Time);
 		
+		/*
+		for (auto& note:notes) {
+			note.Set(picture);
+			note.Move(picture, Time);
+		}*/
+		
+		for (j = 0; j < i;j++) {
+			notes[j].Set(picture);
+			notes[j].Move(picture, Time);
+		}
+		if (i < Notes_Max - 1) {
+			i++;
+		}
 		// 裏画面の内容を表画面に反映
 		ScreenFlip();
 	}	
