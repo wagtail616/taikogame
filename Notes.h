@@ -7,8 +7,7 @@ private:
 	float NoteSpeed = 200.0f;
 
 public:
-	void Set(Picture picture);
+	void Set(int i);
 	void Move(Picture picture,GAMETIME gametime);
-	void Setnumber(int i);
 	int Getnumber();
 };

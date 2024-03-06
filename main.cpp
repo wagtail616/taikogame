@@ -48,7 +48,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	int i;
 	int j;
 	for (i = 0; i <100;i++) {
-		note.Setnumber(i);
+		note.Set(i);
 		notes.push_back(note);
 	}
 	i = 0;
@@ -68,11 +68,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}*/
 		
 		for (j = 0; j < i;j++) {
-			notes[j].Set(picture);
 			notes[j].Move(picture, Time);
 		}
+
+		//ƒm[ƒc‚ÌŠÔŠu‚ð‚ ‚¯‚é
 		if (i < Notes_Max - 1) {
-			i++;
+			if ((float)(i+1)/2<Time.GetElapsedTime()) {
+				i++;
+			}
 		}
 		// — ‰æ–Ê‚Ì“à—e‚ð•\‰æ–Ê‚É”½‰f
 		ScreenFlip();
