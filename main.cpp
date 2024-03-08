@@ -48,9 +48,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	int i;
 	int j;
 	for (i = 0; i <100;i++) {
-		note.Set(i);
+		//note.Set(i);
 		notes.push_back(note);
+		notes[i].SetTiming(i);
 	}
+
+
 	i = 0;
 	j = 0;
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
@@ -73,7 +76,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		//ƒm[ƒc‚ÌŠÔŠu‚ð‚ ‚¯‚é
 		if (i < Notes_Max - 1) {
-			if ((float)(i+1)/2<Time.GetElapsedTime()) {
+			if (notes[i].GetTiming()+1<Time.GetElapsedTime()) {
 				i++;
 			}
 		}
