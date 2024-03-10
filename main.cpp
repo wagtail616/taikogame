@@ -4,7 +4,9 @@
 #include "Title.h"
 #include "Play.h"
 #include "Notes.h"
+#include "score.h"
 #include "vector"
+#include <iostream>
 
 #define SCREEN_WIDTH  1280
 #define SCREEN_HIGHT  720
@@ -42,20 +44,37 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//プレイ中
 	//ループ中の処理考える
 	PLAY play;
+	Score score;
 	Notes note;
 	std::vector<Notes>notes;
-	int Notes_Max = 100;
-	int i;
-	int j;
-	for (i = 0; i <100;i++) {
-		//note.Set(i);
-		notes.push_back(note);
-		notes[i].SetTiming(i);
+	int i=0, j=0;
+	std::vector<std::string> result;
+
+	{//Score
+		std::ifstream ifs("Score/test.txt");
+		if (ifs.fail()) {
+			DrawFormatString(100, 100, GetColor(0, 0, 0), "Cannot open file");
+		}
+		else {
+			std::string str;
+			i = 0, j = 0;
+			while (std::getline(ifs, str,',')) {
+				std::stringstream ss(str);
+				result.push_back(str);
+				//if (str != "") {
+					//note.Set(i);
+					notes.push_back(note);
+					notes[i].SetTiming(i);
+					i++;
+				//}
+				j++;
+
+			}
+		}
+
 	}
+	int Notes_Max = i;
 
-
-	i = 0;
-	j = 0;
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 		//画面の消去
 		ClearDrawScreen;
@@ -79,6 +98,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			if (notes[i].GetTiming()+1<Time.GetElapsedTime()) {
 				i++;
 			}
+		}
+		j = 0;
+		for (std::string s:result) {
+			DrawFormatString(250 + j * 5, 0, GetColor(0, 0, 0),s.c_str());
+			j++;
 		}
 		// 裏画面の内容を表画面に反映
 		ScreenFlip();
