@@ -14,7 +14,7 @@ class Score {
 private:
 	int j;
 	int Notes_Number=0;
-	int timing = 0; 
+	int timing = 1; 
 	int Notes_Max=0;
 	std::vector<Notes>notes;
 	Notes note;
