@@ -41,40 +41,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	title.Set(picture);
 	ScreenFlip();
 	WaitKey();				// キー入力待ち
+	
 	//プレイ中
-	//ループ中の処理考える
 	PLAY play;
 	Score score;
-	Notes note;
-	std::vector<Notes>notes;
-	int i=0, j=0;
+	score.Load();//ロードしつつ、ノーツ最大値出力
 	std::vector<std::string> result;
-
-	{//Score
-		std::ifstream ifs("Score/test.txt");
-		if (ifs.fail()) {
-			DrawFormatString(100, 100, GetColor(0, 0, 0), "Cannot open file");
-		}
-		else {
-			std::string str;
-			i = 0, j = 0;
-			while (std::getline(ifs, str,',')) {
-				std::stringstream ss(str);
-				result.push_back(str);
-				//if (str != "") {
-					//note.Set(i);
-					notes.push_back(note);
-					notes[i].SetTiming(i);
-					i++;
-				//}
-				j++;
-
-			}
-		}
-
-	}
-	int Notes_Max = i;
-
+	
+	//ゲームループ
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 		//画面の消去
 		ClearDrawScreen;
@@ -83,27 +57,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//時間のセット
 		Time.Loop();
 		
-		/*
-		for (auto& note:notes) {
-			note.Set(picture);
-			note.Move(picture, Time);
-		}*/
-		
-		for (j = 0; j < i;j++) {
-			notes[j].Move(picture, Time);
-		}
+		//譜面の表示
+		score.Out(picture, Time);
 
-		//ノーツの間隔をあける
-		if (i < Notes_Max - 1) {
-			if (notes[i].GetTiming()+1<Time.GetElapsedTime()) {
-				i++;
-			}
-		}
-		j = 0;
-		for (std::string s:result) {
-			DrawFormatString(250 + j * 5, 0, GetColor(0, 0, 0),s.c_str());
-			j++;
-		}
 		// 裏画面の内容を表画面に反映
 		ScreenFlip();
 	}	
