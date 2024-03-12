@@ -9,7 +9,7 @@ private:
 
 public:
 	void Set(int i);
-	void SetTiming(int timing);
+	void SetTiming(double timing);
 	void Move(Picture picture,GAMETIME gametime);
 	int Getnumber();
 	double GetTiming();

@@ -5,7 +5,7 @@ void Notes::Set(int i) {
 	number = i;
 	
 }
-void Notes::SetTiming(int timing) {
+void Notes::SetTiming(double timing) {
 	this->timing = timing;
 };
 

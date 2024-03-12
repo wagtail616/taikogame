@@ -12,9 +12,11 @@
 #include "score.h"
 class Score {
 private:
+	double BPM = 0;
+	double minits = 60;
 	int j;
 	int Notes_Number=0;
-	int timing = 1; 
+	double timing = 1; 
 	int Notes_Max=0;
 	std::vector<Notes>notes;
 	Notes note;
