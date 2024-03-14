@@ -1,6 +1,6 @@
 #pragma once
 #include"Dxlib.h"
-class GAMETIME {
+class GameTime {
 private:
 	LONGLONG NowTime;     //Œ»İ
 	LONGLONG BeforeTime;  //ƒVƒXƒeƒ€ŠÔ

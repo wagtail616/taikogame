@@ -1,7 +1,9 @@
 #pragma once
-class PLAY {
+#include "Picture.h"
+
+class Play {
 private:
 public:
-	void Set(Picture picture);//ŽÀ‘•‚ÍTitle.cpp
-	void Notes(Picture picture,int SCREEN_WIDTH);//ŽÀ‘•‚ÍTitle.cpp
+	void Set(Picture picture);//ŽÀ‘•‚ÍPlay.cpp
 };
+

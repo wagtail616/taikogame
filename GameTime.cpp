@@ -1,6 +1,6 @@
 #include "GameTime.h"
 
-void GAMETIME::Set()
+void GameTime::Set()
 {
 	//初期値
 	Time = GetNowHiPerformanceCount();//システム時間取得
@@ -12,7 +12,7 @@ void GAMETIME::Set()
 	FPSCounter = 0;
 }
 
-void GAMETIME::Loop()
+void GameTime::Loop()
 {
 	// FPSの描画
 	DrawFormatString(0, 0, GetColor(0, 0, 0), "FPS:%d", FPS);
@@ -25,8 +25,7 @@ void GAMETIME::Loop()
 	//総経過時間を計算
 	ElapsedTime= (NowTime - Time) / 1000000.0f;
 
-	DrawFormatString(25, 25, GetColor(0, 0, 0), "ElapsedTime:%f", ElapsedTime);
-
+	//FPS定義
 	FPSCounter++;
 	if (NowTime - FPSCheckTime > 1000000) {
 		FPS = FPSCounter;
@@ -35,11 +34,11 @@ void GAMETIME::Loop()
 	}
 }
 
-float GAMETIME::GetDeltaTime()
+float GameTime::GetDeltaTime()
 {
 	return DeltaTime;
 
-}float GAMETIME::GetElapsedTime()
+}float GameTime::GetElapsedTime()
 {
 	return ElapsedTime;
 }

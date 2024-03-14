@@ -1,4 +1,3 @@
-#include"Picture.h"
 #include "Notes.h"
 
 void Notes::Set(int i) {
@@ -9,7 +8,7 @@ void Notes::SetTiming(double timing) {
 	this->timing = timing;
 };
 
-void Notes::Move(Picture picture,GAMETIME gametime) {
+void Notes::Move(Picture picture,GameTime gametime) {
 	picture.Out(this->x, y, picture.Notes);//ƒm[ƒc
 	DrawFormatString(x + 25, y + 125, GetColor(0, 0, 0), "ƒhƒ“(‘å)");
 	x -= NoteSpeed * gametime.GetDeltaTime();
@@ -23,3 +22,4 @@ int Notes::Getnumber()
 double Notes::GetTiming() {
 	return timing;
 };
+

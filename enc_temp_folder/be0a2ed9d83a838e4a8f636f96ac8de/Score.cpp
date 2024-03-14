@@ -28,6 +28,21 @@ void Score::Load(){//Score
 			//ƒŠƒYƒ€‚Ì’è‹`‚ğ‚µ‚Á‚©‚è‚µ‚½‚¢
 			timing += 60 / BPM;
 		}
+		/*
+		char c;
+		
+		while (ifs.get(c)) {
+			if (c == '\n') { break; }
+			if (c ==',') {//‹æØ‚è•¶š
+				timing++;
+			}
+			if (c=='1') {
+					notes.push_back(note);
+					notes[Notes_Number].SetTiming(timing);
+					Notes_Number++;
+			}
+		}
+		*/
 
 	}
 	Notes_Max = Notes_Number;

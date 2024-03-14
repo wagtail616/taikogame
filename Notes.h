@@ -1,5 +1,6 @@
 #pragma once
 #include"GameTime.h"
+#include"Picture.h"
 class Notes{
 private:
 	int number = 0;//ÉmÅ[Écî‘çÜ
@@ -10,7 +11,8 @@ private:
 public:
 	void Set(int i);
 	void SetTiming(double timing);
-	void Move(Picture picture,GAMETIME gametime);
+	void Move(Picture picture,GameTime gametime);
 	int Getnumber();
 	double GetTiming();
 };
+

@@ -1,15 +1,8 @@
 #pragma once
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include "DxLib.h"
 #include "GameTime.h"
 #include "Picture.h"
-#include "Title.h"
-#include "Play.h"
 #include "Notes.h"
-#include "score.h"
+#include <vector>
 class Score {
 private:
 	double BPM = 0;
@@ -22,5 +15,6 @@ private:
 	Notes note;
 public:
 	void Load();
-	void Out(Picture picture, GAMETIME Time);
+	void Out(Picture picture, GameTime Time);
 };
+

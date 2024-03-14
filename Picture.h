@@ -1,5 +1,4 @@
-#ifndef PICTURE_H_
-#define PICTURE_H_
+#pragma once
 
 class Picture {
 public:
@@ -18,4 +17,4 @@ public:
 	void Load();//ŽÀ‘•‚ÍPicture.cpp
 	void Out(int x, int y, int draw);//ŽÀ‘•‚Ípicture.cpp
 };
-#endif 
+

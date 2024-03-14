@@ -1,7 +1,8 @@
 #pragma once
 #include "Picture.h"
-class TITLE {
+class Title {
 private:
 public:
 	void Set(Picture picture);//ŽÀ‘•‚ÍTitle.cpp
 };
+
