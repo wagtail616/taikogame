@@ -38,7 +38,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//タイトル
 	Title title;
 	title.Set(picture);
-	//ScreenFlip();
+	ScreenFlip();
 	WaitKey();// キー入力待ち
 
 	//時間の初期設定
