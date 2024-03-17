@@ -3,6 +3,7 @@
 #include "Picture.h"
 #include "Notes.h"
 #include <vector>
+#include <string>
 class Score {
 private:
 	double BPM = 0;
@@ -12,9 +13,10 @@ private:
 	double timing = 1; 
 	int Notes_Max=0;
 	std::vector<Notes>notes;
-	Notes note;
+
 public:
 	void Load();
 	void Out(Picture picture, GameTime Time);
+	std::string str;
 };
 
