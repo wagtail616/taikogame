@@ -8,6 +8,7 @@ class Score {
 private:
 	double BPM = 0;
 	double minits = 60;
+	int split = 0;
 	int j;
 	int Notes_Number=0;
 	double timing = 1; 
