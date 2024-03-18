@@ -23,6 +23,31 @@ void Score::Load(){//Score
 		std::getline(ifs, str, ':');std::getline(ifs, str);
 		std::stringstream bpm(str);
 		bpm >> BPM;
+		
+		char c;
+		split = 0;
+		int i = 0;
+		while (!ifs.eof()) {
+			ifs >> c;
+			split++;
+			if (c == '1') {
+				notes.push_back(note);
+				notes[Notes_Number].SetTiming(timing);
+				Notes_Number++;
+				timing += 60 / BPM*4;
+			}
+			if (c == '0') {
+				timing += 60 / BPM*4;
+			}
+			if (c==',') {
+				for (; i < Notes_Number;i++) {
+					notes[i].SetTiming(notes[i].GetTiming()/split);
+				}
+				split = 0;
+				i = Notes_Number;
+			}
+		}
+		/* 目標としたものとちょっと違った
 		//1行だけ読み込んでタイミング設定
 		int i = 0;
 			while (std::getline(ifs, str)) {
@@ -50,7 +75,7 @@ void Score::Load(){//Score
 
 
 		//改行を認識しつつ複数回最後まで処理
-		/*while (!ifs.eof()) {
+		while (!ifs.eof()) {
 			while (std::getline(ifs, str, ',')) {
 				std::stringstream ss(str);
 
