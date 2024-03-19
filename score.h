@@ -10,6 +10,7 @@ private:
 	double minits = 60;
 	int split = 0;
 	int j;
+	int Notes_Type = 0;
 	int Notes_Number=0;
 	double timing = 1; 
 	int Notes_Max=0;

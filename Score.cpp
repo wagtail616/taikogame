@@ -30,11 +30,21 @@ void Score::Load(){//Score
 		while (!ifs.eof()) {
 			ifs >> c;
 			split++;
+			
+			//ドンとカッを出力できるようにする
 			if (c == '1') {
 				notes.push_back(note);
+				notes[Notes_Number].SetType(0);
 				notes[Notes_Number].SetTiming(timing);
 				Notes_Number++;
 				timing += 60 / BPM*4;
+			}
+			if (c == '2') {
+				notes.push_back(note);
+				notes[Notes_Number].SetType(1);
+				notes[Notes_Number].SetTiming(timing);
+				Notes_Number++;
+				timing += 60 / BPM * 4;
 			}
 			if (c == '0') {
 				timing += 60 / BPM*4;
