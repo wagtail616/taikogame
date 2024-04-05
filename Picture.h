@@ -13,7 +13,7 @@ public:
 	int Notes[2] = {0,0};//ドンとカッ
 	int Split;//魂ゲージ
 	int Combo;//コンボ数
-
+	int BrightD, BrightK;//光るエフェクト
 	void Load();//実装はPicture.cpp
 	void Out(int x, int y, int draw);//実装はpicture.cpp
 };

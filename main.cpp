@@ -4,6 +4,7 @@
 #include "Title.h"
 #include "Play.h"
 #include "Score.h"
+#include "Key.h"
 
 #define SCREEN_WIDTH  1280
 #define SCREEN_HIGHT  720
@@ -50,17 +51,27 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Score score;
 	score.Load();//ロードしつつ、ノーツ最大値出力
 	
+	//キー入力
+	Key Key;
+
 	//ゲームループ
 	while (!ProcessMessage() && (CheckHitKey(KEY_INPUT_ESCAPE) == 0)) {
 		//画面の消去
 		ClearDrawScreen;
-
+		
 		play.Set(picture);
+
+		//キー入力の取得
+		Key.GetHitKey();
 		//時間のセット
 		Time.Loop();
 		
 		//譜面の表示
 		score.Out(picture, Time);
+
+		Key.ScreenBright(picture);
+		
+		判定クラスを実装して遊べるようにする
 
 		// 裏画面の内容を表画面に反映
 		ScreenFlip();
