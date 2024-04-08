@@ -3,6 +3,7 @@
 #include"Picture.h"
 class Notes{
 private:
+	bool visible = TRUE;
 	int number = 0;//ノーツ番号
 	int Notes_Type = 0;//ドンやカッの種類
 	double timing=0;//タイミング

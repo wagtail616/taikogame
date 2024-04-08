@@ -71,7 +71,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		Key.ScreenBright(picture);
 		
-		判定クラスを実装して遊べるようにする
+		おためしでノーツを非表示にしてみる
+
+
+		//判定クラスを実装して遊べるようにする
 
 		// 裏画面の内容を表画面に反映
 		ScreenFlip();
